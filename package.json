@@ -1,0 +1,20 @@
+{
+  "name": "vee",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai",
+    "chatbot",
+    "vee"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "Vee AI Chatbot - An unflinching AI assistant",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

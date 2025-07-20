@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vee – Unflinching AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Marked.js for markdown parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div id="app" class="app flex h-screen w-screen">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar hidden flex-col border-r border-solid" aria-label="Chat history">
+      <header class="sidebar__header flex items-center justify-between px-16 py-16">
+        <h2 class="text-lg">Chats</h2>
+        <button id="closeSidebarBtn" class="btn btn--sm btn--outline">×</button>
+      </header>
+      <nav id="chatList" class="flex-1 overflow-y-auto px-8 py-8 flex flex-col gap-8"></nav>
+    </aside>
+
+    <!-- Main area -->
+    <main class="main flex flex-col flex-1 h-full">
+      <!-- Header -->
+      <header class="header flex items-center justify-between px-16 py-12 shadow-sm">
+        <div class="flex items-center gap-16">
+          <button id="sidebarToggle" class="btn btn--sm btn--outline" aria-label="Toggle chat history">☰</button>
+          <h1 class="text-xl font-bold">Vee</h1>
+        </div>
+        <div class="flex items-center gap-8">
+          <button id="newChatBtn" class="btn btn--sm btn--secondary">New&nbsp;Chat</button>
+          <button id="fullscreenBtn" class="btn btn--sm btn--outline" aria-label="Toggle fullscreen">⤢</button>
+        </div>
+      </header>
+
+      <!-- Chat container -->
+      <section id="chatContainer" class="chat flex-1 overflow-y-auto px-16 py-16 flex flex-col gap-16">
+        <!-- Messages will be inserted here -->
+      </section>
+
+      <!-- Input area -->
+      <footer class="input-area px-16 py-12">
+        <form id="chatForm" class="flex items-end gap-8 w-full">
+          <textarea 
+            id="chatInput" 
+            class="form-control flex-1" 
+            rows="1" 
+            placeholder="Speak your mind. Vee will dismantle or build upon it…" 
+            style="color: var(--color-text) !important; background-color: var(--color-surface) !important;"
+            required></textarea>
+          <button type="submit" id="sendBtn" class="btn btn--primary" aria-label="Send message">➤</button>
+        </form>
+        <p class="text-xs text-center mt-8 text-secondary">Press Enter to send – Ctrl+Enter for newline</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
